@@ -1,0 +1,161 @@
+/* home */
+.home
+	padding-top: 180px
+
+.home-slider
+	width: 100%
+	display: flex
+	justify-content: center
+	position: relative
+	overflow: hidden
+	border-bottom: 1px solid $light-border-color
+
+/* info */
+
+.home-slider__info
+	padding-bottom: 36px
+	display: flex
+	align-items: flex-end
+	border-left: 1px solid $light-border-color
+	position: relative
+
+/* bottom controls */
+
+.home-slider__bottom-controls-list
+	width: 357px
+	display: flex
+	justify-content: space-around
+
+.home-slider__bottom-controls-item
+	font-family: $main-font
+	@include rem(18)
+	color: $gray
+	padding: 0 8px
+	transition: color .3s
+	cursor: pointer
+	position: relative
+
+	&:hover
+		color: #000
+
+	&.current
+		color: #000
+
+		&:after
+			content: ''
+			display: block
+			width: 100%
+			height: 2px
+			background: #000
+			position: absolute
+			left: 50%
+			top: 50%
+			transform: translate(-50%, -30%)
+
+/* desc */
+
+.home-slider__desc-wrap
+	position: absolute
+	left: -96px
+	top: 50%
+	transform: translateY(-50%)
+	display: flex
+	align-items: center
+	z-index: 99
+
+/* top-controls */
+
+.home-slider__top-controls
+	display: flex
+	flex-direction: column
+	align-items: center
+	position: relative
+
+.home-slider__arrow
+	width: 72px
+	height: 72px
+	border: 1px solid $light-border-color
+	display: flex
+	justify-content: center
+	align-items: center
+	cursor: pointer
+	background: #fff
+	transition: background .3s
+
+	&:hover
+		background: #f2f2f5
+
+/* numbers */
+
+.home-slider__numbers-wrap
+	width: 193px
+	height: 193px
+	background: $acc-color
+	display: flex
+	justify-content: center
+	align-items: center
+
+.home-slider__number
+	font-family: $main-font
+	@include rem(72)
+	letter-spacing: .025rem
+	color: #fff
+	padding-bottom: 10px
+
+.home-slider-item-desc__list
+	margin-left: 38px
+	position: relative
+
+.home-slider-item-desc__item
+	position: absolute
+	left: 0
+	top: 50%
+	transform: translateY(-50%)
+	opacity: 0
+	width: 732px
+
+	&.current
+		opacity: 1
+
+.home-slider__author
+	font-family: $main-font
+	@include rem(18)
+	color: $gray
+
+.home-slider__title
+	border-bottom: 15px solid $acc-color
+	padding: 26px 0
+
+/* img */
+
+.home-slider__img-wrap
+	width: 1408px
+	height: 936px
+	overflow: hidden
+	position: relative
+
+.home-slider__list
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+
+.home-slider__item
+	font-size: 0
+	right: -100%
+	position: absolute
+	top: 0
+	width: 100%
+	height: 100%
+
+	&.current
+		right: 0
+
+.home-slider__img
+	position: absolute
+	display: block
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0

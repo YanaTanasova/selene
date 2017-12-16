@@ -1,0 +1,46 @@
+/* contact */
+
+.contact
+	padding-bottom: 75px
+
+.contact__container
+	background: url(../img/contact-bg.jpg) no-repeat center right
+	min-height: 960px
+	padding: 0 30px
+	display: flex
+	align-items: center
+
+.contact__form-wrap
+	border: 21px solid $acc-color
+	padding: 80px 0 47px 80px
+
+.contact-tabs__list
+	display: flex
+
+.contact-tabs__item
+	color: $gray
+	margin-right: 30px
+	cursor: pointer
+	padding-bottom: 3px
+	transition: color .3s
+	border-bottom: 1px solid transparent
+
+	&:last-child
+		margin-right: 0
+
+	&:hover
+		color: $acc-color
+		
+	&.current
+		color: $acc-color
+		border-bottom: 1px solid $acc-color
+
+.contact__form
+	width: 50%
+	margin-top: 70px
+	padding-right: 15px
+	text-align: center
+
+.contact__btn
+	padding: 17px 64px
+	margin-top: 45px

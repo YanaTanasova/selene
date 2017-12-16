@@ -1,0 +1,30 @@
+-
+	var menu = {
+	'home': '#home',
+	'about us': '#about-us',
+	'projects': '#projects',
+	'clients': '#clients',
+	'contact': '#contact'
+	// 'blog': '#blog'
+	}
+
+//- header
+header.header
+
+	//- logo
+	.logo
+		a.logo-link(href="#")
+			img(src="img/logo.svg")
+
+	//- nav
+	nav.nav
+		ul.nav__list
+			each value, key in menu
+				li.nav__item
+					a.nav__link(href= `${value}`)= key
+
+	//- search
+	.search
+		.search__input-wrap
+			input(type="search").search__input
+			button(type="submit").search__btn

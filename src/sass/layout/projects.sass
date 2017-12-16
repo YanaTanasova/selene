@@ -1,0 +1,148 @@
+/* projects */
+
+.projects
+	background: url(../img/projects-bg.png) no-repeat center top
+	background-size: 100% auto
+	padding: 90px 0 30px 0
+	border-bottom: 1px solid $light-border-color
+
+/* how we work */
+
+.projects__title
+	text-align: center
+	position: relative
+
+	&:before
+		content: ''
+		display: block
+		width: 580px
+		height: 1px
+		background: $acc-color
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translateX(-50%)
+		opacity: .3
+	span
+		background: #fff
+		padding: 0 20px
+		position: relative
+
+.how-we-work__list
+	display: flex
+	justify-content: space-around
+	padding: 130px 0
+
+.how-we-work__item
+	@include rem(60)
+	position: relative
+
+	&:after
+		display: block
+		@include rem(222)
+		color: #fff
+		text-shadow: 0 0 55px rgba(14, 17, 25, 0.15)
+		position: absolute
+		left: 50%
+		top: 50%
+		transform: translate(-50%, -55%)
+		z-index: -1
+
+.how-we-work__item--first:after
+	content: '1'
+
+.how-we-work__item--second:after
+	content: '2'
+
+.how-we-work__item--third:after
+	content: '3'
+	@include rem(181)
+	transform: translate(-50%, -60%)
+
+/* slider */
+	
+.projects__container
+	padding-top: 90px
+	background: #fff
+	min-height: 800px
+
+.projects__slider
+	margin-top: -595px
+	display: flex
+	position: relative
+
+.projects__slider-left
+	width: 50%
+
+.project__slider-arrows
+	position: absolute
+	left: 50%
+	top: 50%
+	transform: translate(-50%, -50%)
+
+.projects__slider-title
+	@include rem(48)
+
+/* arrows */
+
+.project__slider-arrow
+	width: 105px
+	height: 105px
+	display: flex
+	justify-content: center
+	align-items: center
+	cursor: pointer
+	transition: background .3s
+
+.project__slider-arrow--left
+	background: #80bfdb
+
+	&:hover
+		background: darken(#80bfdb, 5%)
+
+.project__slider-arrow--right
+	background: #97d1eb
+
+	&:hover
+		background: darken(#97d1eb, 5%)
+
+.project__slider-arrows-icon
+	fill: #fff
+
+/* slider desc */
+
+.projects__slider-right
+	width: 50%
+	padding-top: 135px
+
+.projects__slider-desc-wrap
+	max-width: 610px
+	margin-left: 168px
+	
+.projects__slider-desc
+	margin-top: 35px
+
+.projects__slider-btn
+	margin-top: 40px
+
+/* slider-controls */
+
+.projects__slider-controls
+	margin-top: 29px
+
+.projects__slider-controls-list
+	display: flex
+	justify-content: center
+
+.projects__slider-controls-item
+	margin-right: 30px
+	outline-offset: -15px
+	transition: outline .3s
+
+	&:last-child
+		margin-right: 0
+
+	&:hover
+		outline: 15px solid #97d1eb
+
+		

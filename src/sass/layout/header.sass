@@ -1,0 +1,76 @@
+/* header */
+
+.header
+	width: 100%
+	left: 0
+	top: 0
+	z-index: 999
+	position: absolute
+	background: #fff
+	padding: 50px 30px
+	display: flex
+	justify-content: space-between
+	align-items: center
+	border-bottom: 1px solid $light-border-color
+
+	&.fixed
+		position: fixed
+		padding: 25px 30px
+		transition: all .5s
+
+/* nav */
+
+.nav__list
+	display: flex
+
+.nav__item
+	margin-right: 80px
+	font-family: $main-font
+	@include rem(18)
+
+	&:last-child
+		margin-right: 0
+
+.nav__link
+	padding: 16px 0 10px
+	border-bottom: 6px solid transparent
+	transition: border .3s
+
+	&.current,
+	&:hover
+		border-bottom: 6px solid #f2f2f2
+
+/* search */
+
+.search__input-wrap
+	width: 220px
+	display: flex
+
+.search__input
+	width: 100%
+	margin-right: 15px
+	border: none
+	background: none
+	outline: none
+	@include rem(16)
+	border-bottom: 1px solid rgba(188, 192, 205, 0.4)
+	transform: scaleX(0) 
+	transform-origin: 100% 0
+	transition: transform .3s
+
+	&.active
+		transform: scaleX(1)
+
+.search__btn
+	width: 28px
+	height: 28px
+	margin-left: auto
+	background: url(../img/search-icon.svg) no-repeat center center
+	border: none
+	cursor: pointer
+	outline: none
+	opacity: .6
+	transition: opacity .3s
+
+	&:hover
+		opacity: 1
