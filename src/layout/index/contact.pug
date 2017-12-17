@@ -5,14 +5,21 @@ section.contact#contact
 
 		.contact__form-wrap
 			.contact__tabs
-				ul.contact-tabs__list
-					li.contact-tabs__item.small-title.current contact us
-					li.contact-tabs__item.small-title phone
-					li.contact-tabs__item.small-title e-mail
+				a(href='#contact-form').contact-tabs__link.small-title.current contact us
+				a(href='#phone').contact-tabs__link.small-title phone
+				a(href='#e-mail').contact-tabs__link.small-title e-mail
+				span.line
 
-			form.contact__form
-				input.input(type="text" placeholder="Name")
-				input.input(type="text" placeholder="Phone")
-				input.input(type="text" placeholder="E-mail")
-				textarea.textarea(placeholder="Message")
-				button.btn.contact__btn send
+			.contact__tabs-content
+				form.tab-content#contact-form.active-content
+					input.input(type="text" placeholder="Name")
+					input.input(type="text" placeholder="Phone")
+					input.input(type="text" placeholder="E-mail")
+					textarea.textarea(placeholder="Message")
+					button.btn.contact__btn send
+
+				.tab-content#phone
+					a(href="callto:+1-202-555-0105").tab-content__link +1-202-555-0105
+				.tab-content#e-mail
+					a(href="mailto:ourcompany@gmail.com").tab-content__link ourcompany@gmail.com
+

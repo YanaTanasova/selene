@@ -22,15 +22,13 @@ section.projects#projects
 			.projects__slider-left
 				ul.projects__slider-list
 					li.projects__slider-item
-						img.projects__slider-img(src="img/project-item-photo-big4.jpg")
-
-			.project__slider-arrows
-				a.project__slider-arrow.project__slider-arrow--left
-
-					<svg width="9" height="18" viewBox="0 0 201.72 381.74"><defs><style>.arrow{clip-path:url(#clip-path);fill:#fff;}</style><clipPath id="clip-path" transform="translate(0 -0.1)"><rect class="cls-1" width="201.84" height="382.8"/></clipPath></defs><title>Ресурс 1arrow-left</title><g id="Слой_2" data-name="Слой 2"><g id="Слой_1-2" data-name="Слой 1"><g class="arrow"><path d="M26.14,191l172.4-172.4A10.8,10.8,0,0,0,183.26,3.28L3.18,183.36a10.77,10.77,0,0,0,0,15.28l180.08,180a10.85,10.85,0,0,0,7.6,3.2,10.55,10.55,0,0,0,7.6-3.2,10.77,10.77,0,0,0,0-15.28Zm0,0" transform="translate(0 -0.1)"/></g></g></g></svg>
-
-				a.project__slider-arrow.project__slider-arrow--right
-					<svg width="9" height="18" viewBox="0 0 201.72 381.74"><defs><style>.arrow{clip-path:url(#clip-path);fill:#fff;}</style><clipPath id="clip-path" transform="translate(-0.12 -0.96)"><rect class="cls-1" width="201.84" height="382.8"/></clipPath></defs><title>Ресурс 1arrow-right</title><g id="Слой_2" data-name="Слой 2"><g id="Слой_1-2" data-name="Слой 1"><g class="arrow"><path d="M175.7,191.84,3.3,364.24a10.8,10.8,0,0,0,15.28,15.28L198.66,199.44a10.77,10.77,0,0,0,0-15.28L18.58,4.16A10.85,10.85,0,0,0,11,1a10.55,10.55,0,0,0-7.6,3.2,10.77,10.77,0,0,0,0,15.28Zm0,0" transform="translate(-0.12 -0.96)"/></g></g></g></svg>
+						img(src="img/project-item-photo-big1.jpg").projects__slider-img
+					li.projects__slider-item
+						img(src="img/project-item-photo-big2.jpg").projects__slider-img
+					li.projects__slider-item
+						img(src="img/project-item-photo-big3.jpg").projects__slider-img
+					li.projects__slider-item.current
+						img(src="img/project-item-photo-big4.jpg").projects__slider-img
 
 			.projects__slider-right
 				.projects__slider-desc-wrap
@@ -38,6 +36,14 @@ section.projects#projects
 					p.projects__slider-desc.desc Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed lorem augue. Maecenas vehicula metus eros, et pellentesque justo ornare nec. Curabitur volutpat, quam in mollis luctus, enim risus ullamcorper libero, eu vehicula sapien nunc et tortor.
 
 					a(href="#").projects__slider-btn.btn case study
+				
+				.project__slider-arrows
+					a.project__slider-arrow.project__slider-arrow--left
+
+						<svg width="9" height="18" viewBox="0 0 201.72 381.74"><defs><style>.arrow{clip-path:url(#clip-path);fill:#fff;}</style><clipPath id="clip-path" transform="translate(0 -0.1)"><rect class="cls-1" width="201.84" height="382.8"/></clipPath></defs><title>Ресурс 1arrow-left</title><g id="Слой_2" data-name="Слой 2"><g id="Слой_1-2" data-name="Слой 1"><g class="arrow"><path d="M26.14,191l172.4-172.4A10.8,10.8,0,0,0,183.26,3.28L3.18,183.36a10.77,10.77,0,0,0,0,15.28l180.08,180a10.85,10.85,0,0,0,7.6,3.2,10.55,10.55,0,0,0,7.6-3.2,10.77,10.77,0,0,0,0-15.28Zm0,0" transform="translate(0 -0.1)"/></g></g></g></svg>
+
+					a.project__slider-arrow.project__slider-arrow--right
+						<svg width="9" height="18" viewBox="0 0 201.72 381.74"><defs><style>.arrow{clip-path:url(#clip-path);fill:#fff;}</style><clipPath id="clip-path" transform="translate(-0.12 -0.96)"><rect class="cls-1" width="201.84" height="382.8"/></clipPath></defs><title>Ресурс 1arrow-right</title><g id="Слой_2" data-name="Слой 2"><g id="Слой_1-2" data-name="Слой 1"><g class="arrow"><path d="M175.7,191.84,3.3,364.24a10.8,10.8,0,0,0,15.28,15.28L198.66,199.44a10.77,10.77,0,0,0,0-15.28L18.58,4.16A10.85,10.85,0,0,0,11,1a10.55,10.55,0,0,0-7.6,3.2,10.77,10.77,0,0,0,0,15.28Zm0,0" transform="translate(-0.12 -0.96)"/></g></g></g></svg>
 
 
 			//- projects__slider-controls
@@ -57,6 +63,6 @@ section.projects#projects
 					a(href="#").projects__slider-controls-link
 						img.projects__slider-controls-img(src="img/project-item-photo-small3.jpg")
 
-				li.projects__slider-controls-item
+				li.projects__slider-controls-item.current
 					a(href="#").projects__slider-controls-link
 						img.projects__slider-controls-img(src="img/project-item-photo-small4.jpg")

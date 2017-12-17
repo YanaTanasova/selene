@@ -69,19 +69,49 @@
 .projects__slider
 	margin-top: -595px
 	display: flex
+	justify-content: center
 	position: relative
 
 .projects__slider-left
-	width: 50%
+	width: 1015px
+	height: 679px
+	overflow: hidden
+	position: relative
+
+.projects__slider-list
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+
+.projects__slider-item
+	right: -100%
+	position: absolute
+	top: 0
+	width: 100%
+	height: 100%
+
+	&.current
+		right: 0
+
+.projects__slider-img
+	position: absolute
+	display: block
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
 
 .project__slider-arrows
 	position: absolute
-	left: 50%
+	left: 0
 	top: 50%
 	transform: translate(-50%, -50%)
 
 .projects__slider-title
 	@include rem(48)
+
 
 /* arrows */
 
@@ -112,8 +142,9 @@
 /* slider desc */
 
 .projects__slider-right
-	width: 50%
+	width: 990px
 	padding-top: 135px
+	position: relative
 
 .projects__slider-desc-wrap
 	max-width: 610px
@@ -142,7 +173,8 @@
 	&:last-child
 		margin-right: 0
 
-	&:hover
+	&:hover,
+	&.current
 		outline: 15px solid #97d1eb
 
 		
