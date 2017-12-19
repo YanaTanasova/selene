@@ -109,7 +109,6 @@
 	@include media(410px)
 		left: 5px
 
-
 /* top-controls */
 
 .home-slider__top-controls
@@ -250,11 +249,10 @@
 		max-width: 380px
 
 	@include media(600px)
-		max-width: 250px
+		max-width: 280px
 
 	@include media(410px)
-		max-width: 210px
-
+		max-width: 250px
 
 	&.current
 		opacity: 1
@@ -288,6 +286,9 @@
 		padding: 12px 0 16px
 		border-bottom-width: 5px
 
+	@include media(410px)
+		border-bottom: none
+
 /* img */
 
 .home-slider__img-wrap
@@ -305,11 +306,8 @@
 	@include media(1200px)
 		height: 500px
 
-	@include media(1200px)
+	@include media(745px)
 		width: 100%
-
-	@include media(600px)
-		height: 300px
 
 .home-slider__list
 	position: absolute
@@ -347,10 +345,14 @@
 	
 	@include media(1200px)
 		width: 802px
-
-	@include media(600px)
-		width: 600px
-
-	@include media(410px)
-		width: 500px
 	
+	@include media(745px)
+		height: 100%
+		width: auto
+
+	// @include media(600px)
+	// 	width: 600px
+
+	// @include media(410px)
+	// 	width: 500px
+	// 

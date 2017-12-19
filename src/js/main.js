@@ -1,9 +1,17 @@
 $(function() {
 
 	// mobile header
-
+	
 	$('.mobile-nav-btn').on('click', function(){
-        $('.nav').toggleClass('show');
+        $('.nav').slideToggle();
+    });
+
+    $(window).on('resize', function(){
+    	if(window.matchMedia('(min-width: 971px)').matches){
+			$('.nav').css('display', 'block');
+		} else {
+			$('.nav').css('display', 'none');
+		}
     });
 
 	// fixed header
@@ -102,6 +110,11 @@ $(function() {
 		reqControl.addClass('current');
 	}
 
+	function blockClick(arrow){
+		arrow.css('pointer-events', 'none');
+		setTimeout(() => arrow.css('pointer-events', 'auto'), 500);
+	}
+
     (function () {
 		let counter = 1,
 			container = $('.home-slider__img-wrap'),
@@ -110,8 +123,10 @@ $(function() {
 			descItems = descContainer.find('.home-slider-desc__item'),
 			controls = $('.home-slider__bottom-controls-item');
 
-		$('.home-slider__arrow--right').bind('click', function(e){
+		$('.home-slider__arrow--right').on('click', function(e){
 		    e.preventDefault();
+
+		    blockClick($(this));
 
 		    let activeItem = container.find('.home-slider__item.current'),
 		    	activeDesc = descContainer.find('.home-slider-desc__item.current'),
@@ -135,6 +150,8 @@ $(function() {
 
 		$('.home-slider__arrow--left').on('click', function(e){
 		    e.preventDefault();
+
+		    blockClick($(this));
 
 		    let activeItem = container.find('.home-slider__item.current'),
 		    	activeDesc = descContainer.find('.home-slider-desc__item.current'),
@@ -247,6 +264,8 @@ $(function() {
 		$('.project__slider-arrow--right').on('click', function(e){
 		    e.preventDefault();
 
+		    blockClick($(this));
+
 		    let activeItem = container.find('.projects__slider-item.current'),
 		    	activeControl = $('.projects__slider-controls-item.current');
 
@@ -275,6 +294,8 @@ $(function() {
 
 		$('.project__slider-arrow--left').on('click', function(e){
 		    e.preventDefault();
+
+		    blockClick($(this));
 
 		    let activeItem = container.find('.projects__slider-item.current'),
 		    	activeControl = $('.projects__slider-controls-item.current');
