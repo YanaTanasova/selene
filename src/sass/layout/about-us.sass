@@ -5,28 +5,105 @@
 	min-height: 670px
 	background: url(../img/about-bg.png) no-repeat top 64px right
 
+	@include media(1447px)
+		padding: 150px 0
+		min-height: 400px
+		background-size: auto 70%
+
+	@include media(1200px)
+		padding: 70px 0
+		min-height: 250px
+		background: url(../img/about-bg.png) no-repeat top 20px right
+		background-size: auto 80%
+
+	@include media(930px)
+		background-position: top 15px right
+		background-size: auto 50%
+		padding: 50px 0
+
+	@include media(600px)
+		background: none
+
+	@include media(410px)
+		padding: 40px 0
+
 .about-us__container
 	padding: 0 30px
 	display: flex
 	align-items: center
 	flex-wrap: wrap
-	
+
+	@include media(600px)
+		padding: 0 15px
 
 .about-us__left
 	width: 50%
 	padding-right: 30px
+
+	@include media(1200px)
+		padding-right: 0
+
+	@include media(930px)
+		width: 100%
+		order: 2
 
 .about-us__right
 	width: 50%
 	margin-top: 30px
 	padding-left: 125px
 
+	@include media(1700px)
+		padding-left: 50px
+
+	@include media(1200px)
+		margin-top: 0
+
+	@include media(930px)
+		width: 100%
+		order: 1
+		padding: 45px 40px 45px 0
+		margin-left: auto
+		display: flex
+		justify-content: flex-end
+
+	@include media(600px)
+		display: none
+
 .about-us__left-title
 	@include rem(72)
 	color: $gray
 
+	@include media(1600px)
+		@include rem(60)
+
+	@include media(1447px)
+		@include rem(50)
+
+	@include media(1200px)
+		@include rem(40)
+
+	@include media(600px)
+		@include rem(30)
+
+	@include media(410px)
+		@include rem(26)
+
 .about-us__desc
 	margin-top: 50px
+	max-width: 710px
+
+	@include media(1600px)
+		margin-top: 30px
+
+	@include media(1200px)
+		margin-top: 20px
 
 .about-us__right-title
 	max-width: 560px
+
+	@include media(1447px)
+		max-width: 400px
+
+	@include media(1200px)
+		max-width: 300px
+

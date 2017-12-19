@@ -8,20 +8,22 @@
 		<meta name="description" content>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel="stylesheet" href="css/main.min.css">
 	</head>
 	<body>
 		<header class="header">
-			<div class="logo"><a class="logo-link" href="#"><img src="img/logo.svg"></a></div>
+			<div class="logo"><a class="logo__link" href="#"><img class="logo__img" src="img/logo.svg"></a></div>
 			<nav class="nav">
 				<ul class="nav__list">
-					<li class="nav__item"><a class="nav__link" href="#home">home</a></li>
-					<li class="nav__item"><a class="nav__link" href="#about-us">about us</a></li>
+					<li class="nav__item"><a class="nav__link current" href="#home">home</a></li>
+					<li class="nav__item"><a class="nav__link" href="#about-us">about-us</a></li>
 					<li class="nav__item"><a class="nav__link" href="#projects">projects</a></li>
 					<li class="nav__item"><a class="nav__link" href="#clients">clients</a></li>
 					<li class="nav__item"><a class="nav__link" href="#contact">contact</a></li>
 				</ul>
 			</nav>
+			<div class="mobile-nav-btn"><i class="material-icons">menu</i></div>
 			<div class="search">
 				<div class="search__input-wrap">
 					<input class="search__input" type="search">
@@ -48,22 +50,22 @@
 									</div>
 									<div class="home-slider__arrow home-slider__arrow--right"><img src="img/arrow-right.svg"></div>
 								</div>
-								<ul class="home-slider-item-desc__list">
-									<li class="home-slider-item-desc__item current">
+								<ul class="home-slider-desc__list">
+									<li class="home-slider-desc__item current">
 										<h3 class="home-slider__author">John Doe</h3>
 										<h2 class="title home-slider__title">Architecture aims at eternity</h2>
 									</li>
-									<li class="home-slider-item-desc__item">
+									<li class="home-slider-desc__item">
 										<h3 class="home-slider__author">Lorem ipusum</h3>
-										<h2 class="title home-slider__title">Lorem ipsum dolor sit</h2>
+										<h2 class="title home-slider__title">Lorem ipsum dolor sit amet</h2>
 									</li>
-									<li class="home-slider-item-desc__item">
+									<li class="home-slider-desc__item">
 										<h3 class="home-slider__author">Amet Consectetur</h3>
 										<h2 class="title home-slider__title">Adipicing elit. Veniam nesunt</h2>
 									</li>
-									<li class="home-slider-item-desc__item">
+									<li class="home-slider-desc__item">
 										<h3 class="home-slider__author">Neque Earum'</h3>
-										<h2 class="title home-slider__title">Est aliquam saepe nemo</h2>
+										<h2 class="title home-slider__title">Est aliquam saepe nemo set</h2>
 									</li>
 								</ul>
 							</div>
@@ -109,7 +111,7 @@
 				</section>
 				<section class="projects" id="projects">
 					<div class="container">
-						<h2 class="projects__title small-title"> <span>how we work</span></h2>
+						<h2 class="projects__title small-title"><span>how we work</span></h2>
 						<ul class="how-we-work__list">
 							<li class="how-we-work__item how-we-work__item--first title">Dexterity</li>
 							<li class="how-we-work__item how-we-work__item--second title">Team</li>
@@ -164,7 +166,7 @@
 						<div class="contact__form-wrap">
 							<div class="contact__tabs"><a class="contact-tabs__link small-title current" href="#contact-form">contact us</a><a class="contact-tabs__link small-title" href="#phone">phone</a><a class="contact-tabs__link small-title" href="#e-mail">e-mail</a><span class="line"></span></div>
 							<div class="contact__tabs-content">
-								<form class="tab-content active-content" id="contact-form">
+								<form class="tab-content contact-form active-content" id="contact-form">
 									<input class="input" type="text" placeholder="Name">
 									<input class="input" type="text" placeholder="Phone">
 									<input class="input" type="text" placeholder="E-mail">

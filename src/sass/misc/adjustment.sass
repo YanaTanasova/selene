@@ -15,6 +15,7 @@ html, body
 
 body
   position: relative
+  overflow-x: hidden
 
 h1, h2, h3, h4, h5, h6, p, ul, li
   margin: 0
@@ -30,72 +31,9 @@ a
   color: inherit
 
 .container
-  width: $container-width
+  max-width: $container-width
   margin: 0 auto
 
-.title
-  font-family: $main-font
-  @include rem(92)
-  line-height: 1.36
-  letter-spacing: .025rem
-  color: #000
 
-.desc
-  font-family: $desc-font
-  @include rem(14)
-  color: $desc-color
-  line-height: 3.43
-
-.small-title
-  font-family: $main-font
-  @include rem(16)
-  color: $acc-color
-  letter-spacing: .27rem
-  text-transform: uppercase
-
-.btn
-  display: inline-block
-  font-family: $desc-font
-  @include rem(14)
-  color: $desc-color
-  text-transform: uppercase
-  letter-spacing: .27rem
-  border: solid 1px #e9ecf2
-  background: transparent
-  padding: 17px 28px
-  cursor: pointer
-  transition: background .3s
-
-  &:hover
-    background: rgba(188, 192, 205, 0.2)
-
-.input, .textarea
-  width: 100%
-  height: 60px
-  color: #000
-  border-right: none
-  border-left: none
-  border-top: none
-  border-bottom: 1px solid rgba(188, 192, 205, .25)
-  outline: none
-  margin-top: 50px
-  font-family: $main-font
-  @include rem(36)
-  color: $gray
-
-  &:first-child
-    margin-top: 0
-
-  @include placeholder
-    font-family: $main-font
-    @include rem(36)
-    opacity: .4
-    color: $gray
-
-.textarea
-  height: 210px
-  resize: none
-  margin-top: 30px
-
-  @include placeholder
-    @include rem(24)
+    
+    

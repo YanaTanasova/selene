@@ -13,15 +13,69 @@
 	align-items: center
 	border-bottom: 1px solid $light-border-color
 
+	@include media(1900px)
+		padding: 30px
+
+	@include media(1600px)
+		padding: 20px
+
+	@include media(1440px)
+		padding: 15px
+
+	@include media(1200px)
+		
+
 	&.fixed
 		position: fixed
 		padding: 25px 30px
 		transition: all .5s
 
+		@include media(1600px)
+			padding: 15px
+
+			.logo
+				width: 100px
+
+		@include media(1440px)
+			padding: 12px 15px
+
+			.logo
+				width: 90px
+/* logo */
+
+.logo
+	font-size: 0
+
+	@include media(1600px)
+		width: 110px
+
+	@include media(1440px)
+		width: 100px
+
+
+.logo__img
+	width: 100%
+
 /* nav */
+
+.nav
+	@include media(970px)
+		position: absolute
+		right: 0
+		top: 60px
+		margin-right: 0
+		background: #fff
+		transform: translateX(100%)
+		transition: transform .3s
+		
+	&.show
+		transform: translateX(0)
 
 .nav__list
 	display: flex
+
+	@include media(970px)
+		display: block
 
 .nav__item
 	margin-right: 80px
@@ -31,23 +85,41 @@
 	&:last-child
 		margin-right: 0
 
+	@include media(1600px)
+		@include rem(16)
+		margin-right: 50px
+
+	@include media(1440px)
+		@include rem(14)
+
+	@include media(970px)
+		padding: 20px
+		margin-right: 80px
+
 .nav__link
 	padding: 16px 0 10px
 	border-bottom: 6px solid transparent
 	transition: border .3s
 
+	@include media(1600px)
+		border-bottom-width: 4px
+		padding: 10px 0 6px
+
 	&.current,
 	&:hover
-		border-bottom: 6px solid #f2f2f2
+		border-bottom-color: #f2f2f2
 
 /* search */
 
+.search
+	@include media(970px)
+		display: none
+
 .search__input-wrap
-	width: 220px
-	display: flex
+	position: relative
 
 .search__input
-	width: 100%
+	width: 220px
 	margin-right: 15px
 	border: none
 	background: none
@@ -57,6 +129,15 @@
 	transform: scaleX(0) 
 	transform-origin: 100% 0
 	transition: transform .3s
+	position: absolute
+	top: 0
+	right: 15px
+
+	@include media(1600px)
+		width: 180px
+
+	@include media(1440px)
+		width: 140px
 
 	&.active
 		transform: scaleX(1)
@@ -66,11 +147,38 @@
 	height: 28px
 	margin-left: auto
 	background: url(../img/search-icon.svg) no-repeat center center
+	background-size: contain
 	border: none
 	cursor: pointer
 	outline: none
 	opacity: .6
 	transition: opacity .3s
 
+	@include media(1600px)
+		width: 24px
+		height: 24px
+
+	@include media(1440px)
+		width: 18px
+		height: 18px
+
 	&:hover
 		opacity: 1
+
+/* mobile-nav-btn */
+
+.mobile-nav-btn
+	display: none
+	padding: 5px
+	font-size: 0
+	cursor: pointer
+	transition: background .3s, color .3s
+
+	&:hover
+		color: $acc-color
+
+	@include media(970px)
+		display: block
+
+	@include media(520px)
+		margin-right: 0

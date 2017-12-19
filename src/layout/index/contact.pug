@@ -3,6 +3,7 @@
 section.contact#contact
 	.container.contact__container
 
+		//- form wrap
 		.contact__form-wrap
 			.contact__tabs
 				a(href='#contact-form').contact-tabs__link.small-title.current contact us
@@ -10,8 +11,9 @@ section.contact#contact
 				a(href='#e-mail').contact-tabs__link.small-title e-mail
 				span.line
 
+			//- tabs content
 			.contact__tabs-content
-				form.tab-content#contact-form.active-content
+				form.tab-content#contact-form.contact-form.active-content
 					input.input(type="text" placeholder="Name")
 					input.input(type="text" placeholder="Phone")
 					input.input(type="text" placeholder="E-mail")

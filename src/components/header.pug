@@ -1,28 +1,30 @@
--
-	var menu = {
-	'home': '#home',
-	'about us': '#about-us',
-	'projects': '#projects',
-	'clients': '#clients',
-	'contact': '#contact'
-	// 'blog': '#blog'
-	}
-
 //- header
 header.header
 
 	//- logo
 	.logo
-		a.logo-link(href="#")
-			img(src="img/logo.svg")
+		a.logo__link(href="#")
+			img.logo__img(src="img/logo.svg")
 
 	//- nav
 	nav.nav
 		ul.nav__list
-			each value, key in menu
 				li.nav__item
-					a.nav__link(href= `${value}`)= key
+					a.nav__link.current(href= `#home`) home
+				li.nav__item
+					a.nav__link(href= `#about-us`) about-us
+				li.nav__item
+					a.nav__link(href= `#projects`) projects
+				li.nav__item
+					a.nav__link(href= `#clients`) clients
+				li.nav__item
+					a.nav__link(href= `#contact`) contact
+				//- li.nav__item
+					//- a.nav__link(href= `#blog`) blog
 
+	.mobile-nav-btn
+		i.material-icons menu
+		
 	//- search
 	.search
 		.search__input-wrap

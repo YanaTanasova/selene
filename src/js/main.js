@@ -1,10 +1,25 @@
 $(function() {
 
+	// mobile header
+
+	$('.mobile-nav-btn').on('click', function(){
+        $('.nav').toggleClass('show');
+    });
+
 	// fixed header
 
-	let headerH = $('.header').height() - 50,
-		pageH = $('#home').height() - headerH;
-    
+	let headerH;
+
+	if(window.matchMedia('(max-width: 1440px)').matches){
+		headerH = $('.header').innerHeight() - 10;
+	} else if (window.matchMedia('(max-width: 1600px)').matches){
+		headerH = $('.header').innerHeight() - 20;
+	} else {
+		headerH = $('.header').innerHeight() - 50;
+	}
+
+	let pageH = $('#home').innerHeight() - headerH;
+
     $(document).on('scroll', function(){
 
         let documentScroll = $(this).scrollTop() + 1;
@@ -29,13 +44,13 @@ $(function() {
 
 	$(document).on('scroll', function (event){
         let scrollPos = $(document).scrollTop();
-        $('.nav a').each(function () {
+        $('.nav__link').each(function () {
             let currLink = $(this);
             let refElement = $(currLink.attr('href'));
             let refElementPos = refElement.position().top - headerH - 1;
 
-            if (refElementPos <= scrollPos && refElementPos + refElement.height() > scrollPos) {
-                $('.nav ul li a').removeClass('current');
+            if (refElementPos <= scrollPos && refElementPos + refElement.innerHeight() > scrollPos) {
+                $('.nav__link').removeClass('current');
                 currLink.addClass('current');
             }
             else{
@@ -57,6 +72,8 @@ $(function() {
     }
 
     function nextSlide(activeItem, reqItem, activeDesc, reqDescItem){
+
+    	activeItem.css('z-index', 1);
 		activeItem.animate({
 			'right' : '100%'
 		}, 500);
@@ -64,7 +81,7 @@ $(function() {
 		reqItem.animate({
 			'right' : '0'
 		}, 500, function () {
-			activeItem.removeClass('current').css('right', '-100%');
+			activeItem.removeClass('current').css('right', '-100%').css('z-index', 2);
 			$(this).addClass('current');
 		});
 
@@ -88,16 +105,16 @@ $(function() {
     (function () {
 		let counter = 1,
 			container = $('.home-slider__img-wrap'),
-			descContainer = $('.home-slider-item-desc__list'),
+			descContainer = $('.home-slider-desc__list'),
 			items = container.find('.home-slider__item'),
-			descItems = descContainer.find('.home-slider-item-desc__item'),
+			descItems = descContainer.find('.home-slider-desc__item'),
 			controls = $('.home-slider__bottom-controls-item');
 
-		$('.home-slider__arrow--right').on('click', function(e){
+		$('.home-slider__arrow--right').bind('click', function(e){
 		    e.preventDefault();
 
 		    let activeItem = container.find('.home-slider__item.current'),
-		    	activeDesc = descContainer.find('.home-slider-item-desc__item.current'),
+		    	activeDesc = descContainer.find('.home-slider-desc__item.current'),
 		    	activeControl = $('.home-slider__bottom-controls-item.current');
 
 			if (counter >= items.length) {
@@ -120,7 +137,7 @@ $(function() {
 		    e.preventDefault();
 
 		    let activeItem = container.find('.home-slider__item.current'),
-		    	activeDesc = descContainer.find('.home-slider-item-desc__item.current'),
+		    	activeDesc = descContainer.find('.home-slider-desc__item.current'),
 		    	activeControl = $('.home-slider__bottom-controls-item.current');
 
 			let reqItem = items.eq(counter - 2),
@@ -128,6 +145,7 @@ $(function() {
 				reqControl = controls.eq(counter - 2);
 			reqItem.css('right', '100%');
 
+			activeItem.css('z-index', 3);
 			activeItem.animate({
 				'right' : '-100%'
 			}, 500);
@@ -135,7 +153,7 @@ $(function() {
 			reqItem.animate({
 				'right' : '0'
 			}, 500, function () {
-				activeItem.removeClass('current');
+				activeItem.removeClass('current').css('z-index', 2);
 				$(this).addClass('current');
 			});
 
@@ -166,7 +184,7 @@ $(function() {
 
 			let activeItem = $('.home-slider__item.current'),
 				reqItem = items.eq(controlId),
-				activeDesc = descContainer.find('.home-slider-item-desc__item.current'),
+				activeDesc = descContainer.find('.home-slider-desc__item.current'),
 				reqDescItem = descItems.eq(controlId),
 				currentControl = $('.home-slider__bottom-controls-item.current');
 
@@ -183,7 +201,7 @@ $(function() {
 		});
 	}());
 
-	// modals
+	// popup
 
 	let overlay = $('.overlay'),
 		modal = $('.modal'),
@@ -194,6 +212,10 @@ $(function() {
 
 		e.preventDefault();
 
+		$('html,body').on('mousewheel', function (e) {
+			e.preventDefault();
+    	});
+
     	overlay.animate({'opacity': '.3'}, 500);
     	modal.animate({'opacity': '1'}, 500);
     	$('.overlay, .modal').css('display', 'block');
@@ -201,20 +223,17 @@ $(function() {
     	let largeImg = $(this).attr('href');
     	modalImg.attr({src: largeImg});
 
-    	$('body').addClass('overflow');
-
     });
 
 	$('.close, .overlay').on('click', function(){
 		closeModal();
+		$('html,body').off('mousewheel');
 	});
 
 	function closeModal(){
 		$('overlay, .modal').animate({'opacity': '0'}, 500, function(){
 		$('.overlay, .modal').css('display', 'none');
 		});
-
-		$('body').removeClass('overflow');
 	}
 
 	// projects slider
@@ -238,6 +257,7 @@ $(function() {
 			let reqItem = items.eq(counter),
 				reqControl = controls.eq(counter);
 
+			activeItem.css('z-index', 1);
 			activeItem.animate({
 				'right' : '100%'
 			}, 500);
@@ -245,7 +265,7 @@ $(function() {
 			reqItem.animate({
 				'right' : '0'
 			}, 500, function () {
-				activeItem.removeClass('current').css('right', '-100%');
+				activeItem.removeClass('current').css('right', '-100%').css('z-index', 2);
 				$(this).addClass('current');
 				changeControlClass(activeControl, reqControl);
 			});
@@ -263,6 +283,7 @@ $(function() {
 				reqControl = controls.eq(counter - 2);
 			reqItem.css('right', '100%');
 
+			activeItem.css('z-index', 3);
 			activeItem.animate({
 				'right' : '-100%'
 			}, 500);
@@ -270,7 +291,7 @@ $(function() {
 			reqItem.animate({
 				'right' : '0'
 			}, 500, function () {
-				activeItem.removeClass('current');
+				activeItem.removeClass('current').css('z-index', 2);
 				$(this).addClass('current');
 				changeControlClass(activeControl, reqControl);
 			});
@@ -292,6 +313,7 @@ $(function() {
 
 			if (controlId + 1 != counter){
 
+				activeItem.css('z-index', 1);
 				activeItem.animate({
 					'right' : '100%'
 				}, 500);
@@ -299,7 +321,7 @@ $(function() {
 				reqItem.animate({
 					'right' : '0'
 				}, 500, function () {
-					activeItem.removeClass('current').css('right', '-100%');
+					activeItem.removeClass('current').css('right', '-100%').css('z-index', 2);
 					$(this).addClass('current');
 				});
 
@@ -313,28 +335,37 @@ $(function() {
 
 	// contact tabs
 
-	let tabsBtn = $('.contact__tabs'),
-        tabContent = $('.tab-content'),
-        childBtn = $('.contact-tabs__link'),
-        line = $('.line');
+	(function () {
 
-    $(tabsBtn).on('click', '.contact-tabs__link', function(e){
+		let tabsBtn = $('.contact__tabs'),
+	        tabContent = $('.tab-content'),
+	        childBtn = $('.contact-tabs__link'),
+	        line = $('.line');
 
-    	e.preventDefault();
+	        let lineWidth = $('.contact-tabs__link.current').width();
+	    	line.css('width', lineWidth);
 
-        let anchor = $(e.target).attr('href');
+	    	let linePosition = $('.contact-tabs__link.current').position().left;
+	        line.css('left', linePosition);
 
-        tabContent.animate({'opacity' : '0'}, 200);
-		childBtn.removeClass('current');
-		tabContent.removeClass('active-content');
+	    $(tabsBtn).on('click', '.contact-tabs__link', function(e){
 
-		$(e.target).addClass('current');
-		$(anchor).addClass('active-content').animate({'opacity' : '1'}, 200);
-        
-		let lineWidth = $('.contact-tabs__link.current').width();
-    	line.css('width', lineWidth);
-    	
-        let linePosition = $(e.target).position().left;
-        line.css('left', linePosition);
-    })
+	    	e.preventDefault();
+
+	        let anchor = $(e.target).attr('href');
+
+	        tabContent.animate({'opacity' : '0'}, 200);
+			childBtn.removeClass('current');
+			tabContent.removeClass('active-content');
+
+			$(e.target).addClass('current');
+			$(anchor).addClass('active-content').animate({'opacity' : '1'}, 200);
+	        
+			lineWidth = $('.contact-tabs__link.current').width();
+	    	line.css('width', lineWidth);
+	    	
+	        linePosition = $(e.target).position().left;
+	        line.css('left', linePosition);
+	    })
+    }());
 })

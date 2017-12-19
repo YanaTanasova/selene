@@ -3,10 +3,41 @@
 .clients
 	padding: 100px 0 115px
 
+	@include media(1440px)
+		padding: 60px 0 65px
+
+	@include media(970px)
+		padding: 20px 0
+
 .clients__container
 	padding: 0 30px
+
+	@include media(600px)
+		padding: 0 15px
 
 .clients__list
 	display: flex
 	justify-content: space-around
 	align-items: center
+	flex-wrap: wrap
+
+	@include media(600px)
+		justify-content: space-between
+
+.clients__item
+	width: 16%
+
+	@include media(970px)
+		width: 33%
+		padding: 20px 0
+
+	@include media(410px)
+		width: 50%
+
+.clients__logo
+	display: block
+	margin: 0 auto
+	max-width: 100%
+
+	@include media(450px)
+		max-width: 80%

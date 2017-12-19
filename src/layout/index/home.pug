@@ -13,8 +13,10 @@ section.home#home
 				li.home-slider__bottom-controls-item 03
 				li.home-slider__bottom-controls-item 04
 
-			//- desc
+			//- desc-wrap
 			.home-slider__desc-wrap
+
+				//- top-controls
 				.home-slider__top-controls
 					.home-slider__arrow.home-slider__arrow--left
 						img(src="img/arrow-left.svg")
@@ -24,19 +26,20 @@ section.home#home
 					.home-slider__arrow.home-slider__arrow--right
 						img(src="img/arrow-right.svg")
 
-				ul.home-slider-item-desc__list
-					li.home-slider-item-desc__item.current
+				//- desc
+				ul.home-slider-desc__list
+					li.home-slider-desc__item.current
 						h3.home-slider__author John Doe
 						h2.title.home-slider__title Architecture aims at eternity
-					li.home-slider-item-desc__item
+					li.home-slider-desc__item
 						h3.home-slider__author Lorem ipusum
-						h2.title.home-slider__title Lorem ipsum dolor sit
-					li.home-slider-item-desc__item
+						h2.title.home-slider__title Lorem ipsum dolor sit amet
+					li.home-slider-desc__item
 						h3.home-slider__author Amet Consectetur
 						h2.title.home-slider__title Adipicing elit. Veniam nesunt
-					li.home-slider-item-desc__item
+					li.home-slider-desc__item
 						h3.home-slider__author Neque Earum'
-						h2.title.home-slider__title Est aliquam saepe nemo
+						h2.title.home-slider__title Est aliquam saepe nemo set
 
 		//- img
 		.home-slider__img-wrap

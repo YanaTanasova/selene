@@ -1,0 +1,143 @@
+.title
+  font-family: $main-font
+  @include rem(92)
+  line-height: 1.36
+  letter-spacing: .025rem
+  color: #000
+
+  @include media(1600px)
+    @include rem(80)
+
+  @include media(1440px)
+    @include rem(60)
+    line-height: 1.2
+
+  @include media(1200px)
+    @include rem(46)
+
+  @include media(600px)
+    @include rem(30)
+
+  @include media(410px)
+    @include rem(26)
+
+.desc
+  font-family: $desc-font
+  @include rem(14)
+  color: $desc-color
+  line-height: 3.43
+
+  @include media(1200px)
+    line-height: 3
+    @include rem(12)
+
+  @include media(600px)
+    line-height: 2.5
+
+  @include media(410px)
+    @include rem(11)
+
+.small-title
+  font-family: $main-font
+  @include rem(16)
+  color: $acc-color
+  letter-spacing: .27rem
+  text-transform: uppercase
+
+  @include media(1440px)
+    @include rem(13)
+
+  @include media(1200px)
+    @include rem(12)
+
+  @include media(600px)
+    @include rem(11)
+
+.btn
+  display: inline-block
+  font-family: $desc-font
+  @include rem(14)
+  color: $desc-color
+  text-transform: uppercase
+  letter-spacing: .27rem
+  border: solid 1px #e9ecf2
+  background: transparent
+  padding: 17px 28px
+  cursor: pointer
+  transition: background .3s
+
+  @include media(1440px)
+    @include rem(11)
+    padding: 15px 28px
+
+    @include media(1200px)
+      padding: 12px 20px
+
+  &:hover
+    background: rgba(188, 192, 205, 0.2)
+
+.input, .textarea
+  width: 100%
+  height: 60px
+  color: #000
+  border-right: none
+  border-left: none
+  border-top: none
+  border-bottom: 1px solid rgba(188, 192, 205, .25)
+  outline: none
+  margin-top: 50px
+  font-family: $main-font
+  @include rem(36)
+  color: $gray
+  background: transparent
+
+  @include media(1440px)
+    @include rem(26)
+    height: 40px
+    margin-top: 30px
+
+  @include media(1200px)
+    @include rem(22)
+    height: 30px
+
+  &:first-child
+    margin-top: 0
+
+  @include placeholder
+    font-family: $main-font
+    @include rem(36)
+    opacity: .4
+    color: $gray
+
+    @include media(1440px)
+      @include rem(26)
+
+    @include media(1200px)
+       @include rem(22)
+
+.textarea
+  height: 210px
+  resize: none
+  margin-top: 30px
+  @include rem(24)
+
+  @include media(1440px)
+    @include rem(22)
+    height: 180px
+
+  @include media(900px)
+    @include rem(20)
+    height: 140px
+
+  @include media(460px)
+    height: 110px
+
+  @include placeholder
+    @include rem(24)
+
+    @include media(1440px)
+      @include rem(22)
+
+    @include media(1200px)
+      @include rem(20)
+      

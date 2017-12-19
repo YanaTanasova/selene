@@ -6,6 +6,12 @@
 	padding: 90px 0 30px 0
 	border-bottom: 1px solid $light-border-color
 
+	@include media(1440px)
+		padding: 60px 0 20px
+
+	@include media(600px)
+		background: none
+
 /* how we work */
 
 .projects__title
@@ -23,19 +29,61 @@
 		left: 50%
 		transform: translateX(-50%)
 		opacity: .3
+
+		@include media(1200px)
+			width: 400px
+
+		@include media(600px)
+			width: 300px
+
+		@include media(380px)
+			display: none
+
 	span
 		background: #fff
 		padding: 0 20px
 		position: relative
 
+		@include media(600px)
+			padding: 0 10px
+
 .how-we-work__list
 	display: flex
 	justify-content: space-around
 	padding: 130px 0
+	flex-wrap: wrap
+
+	@include media(970px)
+		justify-content: space-between
+		padding: 130px 15px
+
+	@include media(740px)
+		padding: 80px 15px
+
+	@include media(600px)
+		padding: 30px 15px 5px
 
 .how-we-work__item
 	@include rem(60)
 	position: relative
+	width: 30%
+	text-align: center
+
+	@include media(1600px)
+		@include rem(50)
+
+	@include media(1440px)
+		@include rem(40)
+
+	@include media(1200px)
+		@include rem(30)
+
+	@include media(600px)
+		width: 100%
+		padding: 40px 0
+
+	@include media(500px)
+		@include rem(26)
 
 	&:after
 		display: block
@@ -48,6 +96,18 @@
 		transform: translate(-50%, -55%)
 		z-index: -1
 
+		@include media(1600px)
+			@include rem(200)
+
+		@include media(1440px)
+			@include rem(160)
+
+		@include media(1200px)
+			@include rem(140)
+
+		@include media(500px)
+			@include rem(130)
+
 .how-we-work__item--first:after
 	content: '1'
 
@@ -59,24 +119,75 @@
 	@include rem(181)
 	transform: translate(-50%, -60%)
 
+	@include media(1600px)
+		@include rem(175)
+
+	@include media(1440px)
+		@include rem(150)
+
+	@include media(1200px)
+		@include rem(130)
+
+	@include media(500px)
+		@include rem(120)
+
 /* slider */
 	
 .projects__container
 	padding-top: 90px
 	background: #fff
-	min-height: 800px
+	min-height: 900px
+
+	@include media(1440px)
+		padding-top: 70px
+		min-height: 100px
+
+	@include media(1200px)
+		padding-top: 55px
 
 .projects__slider
-	margin-top: -595px
+	margin-top: -695px
 	display: flex
 	justify-content: center
 	position: relative
+
+	@include media(1440px)
+		margin-top: 0
+		background: #fff
+		padding-top: 50px
+
+	@include media(1200px)
+		padding-top: 20px
+
+	@include media(970px)
+		flex-direction: column
 
 .projects__slider-left
 	width: 1015px
 	height: 679px
 	overflow: hidden
 	position: relative
+
+	@include media(1600px)
+		height: 600px
+
+	@include media(1440px)
+		height: 450px
+
+	@include media(1200px)
+		height: 400px
+
+	@include media(970px)
+		order: 2
+		margin-top: 30px
+		width: 100%
+		height: 500px
+
+	@include media(770px)
+		height: 350px
+
+	@include media(560px)
+		height: 280px
 
 .projects__slider-list
 	position: absolute
@@ -91,9 +202,11 @@
 	top: 0
 	width: 100%
 	height: 100%
+	z-index: 2
 
 	&.current
 		right: 0
+		z-index: 1
 
 .projects__slider-img
 	position: absolute
@@ -102,18 +215,25 @@
 	left: 0
 	right: 0
 	bottom: 0
+	height: 100%
+
+	@include media(970px)
+		height: auto
+		width: 100%
+
+	@include media(440px)
+		width: auto
+		height: 100%
+
+
+/* arrows */
 
 .project__slider-arrows
 	position: absolute
 	left: 0
 	top: 50%
 	transform: translate(-50%, -50%)
-
-.projects__slider-title
-	@include rem(48)
-
-
-/* arrows */
+	z-index: 4
 
 .project__slider-arrow
 	width: 105px
@@ -123,6 +243,17 @@
 	align-items: center
 	cursor: pointer
 	transition: background .3s
+
+	@include media(1440px)
+		width: 80px
+		height: 80px
+
+	@include media(1200px)
+		width: 60px
+		height: 60px
+
+	@include media(970px)
+		display: none
 
 .project__slider-arrow--left
 	background: #80bfdb
@@ -136,30 +267,90 @@
 	&:hover
 		background: darken(#97d1eb, 5%)
 
-.project__slider-arrows-icon
-	fill: #fff
+.project__slider-arrow svg
+
+	@include media(1440px)
+		height: 12px
+
+	@include media(1200px)
+		height: 10px
 
 /* slider desc */
 
 .projects__slider-right
-	width: 990px
-	padding-top: 135px
+	width: 50%
+	padding-right: 30px
 	position: relative
+	display: flex
+	align-items: center
+
+	@include media(1440px)
+		width: 80%
+		padding-right: 70px
+
+	@include media(1200px)
+		padding-right: 50px
+
+	@include media(970px)
+		order: 1
+
+	@include media(600px)
+		width: 100%
+		padding: 0 20px
+
+	@include media(400px)
+		padding: 0 15px
 
 .projects__slider-desc-wrap
 	max-width: 610px
 	margin-left: 168px
-	
+
+	@include media(1600px)
+		margin-left: 120px
+
+	@include media(1200px)
+		margin-left: 65px
+
+	@include media(600px)
+		margin-left: 0
+
+.projects__slider-title
+	@include rem(48)
+
+	@include media(1440px)
+		@include rem(40)
+
+	@include media(1200px)
+		@include rem(32)
+		max-width: 400px
+
 .projects__slider-desc
 	margin-top: 35px
 
+	@include media(1440px)
+		margin-top: 25px
+		line-height: 2.8
+		@include rem(12)
+
 .projects__slider-btn
 	margin-top: 40px
+
+	@include media(1440px)
+		margin-top: 30px
 
 /* slider-controls */
 
 .projects__slider-controls
 	margin-top: 29px
+
+	@include media(1440px)
+		margin-top: 20px
+
+	@include media(1200px)
+		margin-top: 15px
+
+	@include media(400px)
+		margin-top: 10px
 
 .projects__slider-controls-list
 	display: flex
@@ -170,11 +361,33 @@
 	outline-offset: -15px
 	transition: outline .3s
 
+	@include media(1440px)
+		width: 160px
+		outline-offset: -10px
+		margin-right: 20px
+
+	@include media(1200px)
+		width: 120px
+		outline-offset: -7px
+		margin-right: 15px
+
+	@include media(400px)
+		margin-right: 10px
+
 	&:last-child
 		margin-right: 0
 
 	&:hover,
 	&.current
 		outline: 15px solid #97d1eb
+
+		@include media(1440px)
+			outline-width: 10px
+
+		@include media(1200px)
+			outline-width: 7px
+
+.projects__slider-controls-img
+	width: 100%
 
 		

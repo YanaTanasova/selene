@@ -1,11 +1,20 @@
 /* home */
 .home
-	padding-top: 180px
+	padding-top: 176px
+
+	@include media(1900px)
+		padding-top: 136px
+
+	@include media(1600px)
+		padding-top: 96px
+
+	@include media(1440px)
+		padding-top: 79px
 
 .home-slider
 	width: 100%
 	display: flex
-	justify-content: center
+	justify-content: flex-end
 	position: relative
 	overflow: hidden
 	border-bottom: 1px solid $light-border-color
@@ -19,12 +28,27 @@
 	border-left: 1px solid $light-border-color
 	position: relative
 
+	@include media(1900px)
+		border-left: none
+
+	@include media(1200px)
+		padding-bottom: 20px
+
 /* bottom controls */
 
 .home-slider__bottom-controls-list
 	width: 357px
 	display: flex
 	justify-content: space-around
+
+	@include media(1900px)
+		justify-content: flex-end
+
+	@include media(970px)
+		max-width: 250px
+
+	@include media(795px)
+		display: none
 
 .home-slider__bottom-controls-item
 	font-family: $main-font
@@ -34,6 +58,13 @@
 	transition: color .3s
 	cursor: pointer
 	position: relative
+
+	@include media(1900px)
+		@include rem(16)
+		margin-right: 20px
+
+	@include media(1200px)
+		@include rem(14)
 
 	&:hover
 		color: #000
@@ -52,7 +83,7 @@
 			top: 50%
 			transform: translate(-50%, -30%)
 
-/* desc */
+/* desc wrap */
 
 .home-slider__desc-wrap
 	position: absolute
@@ -63,6 +94,22 @@
 	align-items: center
 	z-index: 99
 
+	@include media(1900px)
+		left: 20px
+
+	@include media(1700px)
+		transform: translateY(-60%)
+
+	@include media(795px)
+		transform: translateY(-50%)
+
+	@include media(600px)
+		left: 10px
+
+	@include media(410px)
+		left: 5px
+
+
 /* top-controls */
 
 .home-slider__top-controls
@@ -70,6 +117,19 @@
 	flex-direction: column
 	align-items: center
 	position: relative
+
+	&:after
+		content: ''
+		display: block
+		width: 1px
+		height: 300%
+		background: $light-border-color
+		position: absolute
+		top: -100%
+		z-index: -1
+
+		@include media(970px)
+			display: none
 
 .home-slider__arrow
 	width: 72px
@@ -81,9 +141,31 @@
 	cursor: pointer
 	background: #fff
 	transition: background .3s
+	
+	@include media(1440px)
+		width: 60px
+		height: 60px
+
+	@include media(1200px)
+		width: 50px
+		height: 50px
+
+	@include media(795px)
+		background: rgba(255, 255, 255, .6)
+
+	@include media(600px)
+		width: 40px
+		height: 40px
 
 	&:hover
 		background: #f2f2f5
+
+	img
+		@include media(1440px)
+			height: 12px
+
+		@include media(1200px)
+			height: 10px
 
 /* numbers */
 
@@ -95,6 +177,26 @@
 	justify-content: center
 	align-items: center
 
+	@include media(1600px)
+		width: 170px
+		height: 170px
+
+	@include media(1440px)
+		width: 130px
+		height: 130px
+
+	@include media(1200px)
+		width: 100px
+		height: 100px
+
+	@include media(600px)
+		width: 70px
+		height: 70px
+
+	@include media(410px)
+		width: 60px
+		height: 60px
+
 .home-slider__number
 	font-family: $main-font
 	@include rem(72)
@@ -102,17 +204,57 @@
 	color: #fff
 	padding-bottom: 10px
 
-.home-slider-item-desc__list
+	@include media(1600px)
+		@include rem(68)
+
+	@include media(1440px)
+		@include rem(50)
+
+	@include media(1200px)
+		@include rem(40)
+
+	@include media(600px)
+		@include rem(30)
+		padding-bottom: 5px
+
+/* desc */
+
+.home-slider-desc__list
 	margin-left: 38px
 	position: relative
 
-.home-slider-item-desc__item
+	@include media(1200px)
+		margin-left: 30px
+
+	@include media(600px)
+		margin-left: 15px
+
+	@include media(410px)
+		margin-left: 10px
+
+.home-slider-desc__item
 	position: absolute
 	left: 0
 	top: 50%
 	transform: translateY(-50%)
 	opacity: 0
 	width: 732px
+
+	@include media(1600px)
+		max-width: 650px
+
+	@include media(1440px)
+		max-width: 500px
+
+	@include media(1200px)
+		max-width: 380px
+
+	@include media(600px)
+		max-width: 250px
+
+	@include media(410px)
+		max-width: 210px
+
 
 	&.current
 		opacity: 1
@@ -122,9 +264,29 @@
 	@include rem(18)
 	color: $gray
 
+	@include media(1440px)
+		@include rem(16)
+
+	@include media(1200px)
+		@include rem(14)
+
+	@include media(600px)
+		@include rem(12)
+
 .home-slider__title
+	display: block
 	border-bottom: 15px solid $acc-color
 	padding: 26px 0
+
+	@include media(1440px)
+		border-bottom-width: 12px
+
+	@include media(1200px)
+		border-bottom-width: 8px
+
+	@include media(600px)
+		padding: 12px 0 16px
+		border-bottom-width: 5px
 
 /* img */
 
@@ -133,6 +295,21 @@
 	height: 936px
 	overflow: hidden
 	position: relative
+
+	@include media(1700px)
+		height: 800px
+
+	@include media(1440px)
+		height: 600px
+
+	@include media(1200px)
+		height: 500px
+
+	@include media(1200px)
+		width: 100%
+
+	@include media(600px)
+		height: 300px
 
 .home-slider__list
 	position: absolute
@@ -148,9 +325,11 @@
 	top: 0
 	width: 100%
 	height: 100%
+	z-index: 2
 
 	&.current
 		right: 0
+		z-index: 1
 
 .home-slider__img
 	position: absolute
@@ -159,3 +338,19 @@
 	left: 0
 	right: 0
 	bottom: 0
+	
+	@include media(1700px)
+		width: 1301px
+
+	@include media(1440px)
+		width: 1100px
+	
+	@include media(1200px)
+		width: 802px
+
+	@include media(600px)
+		width: 600px
+
+	@include media(410px)
+		width: 500px
+	
