@@ -38,6 +38,11 @@
 	display: block
 	margin: 0 auto
 	max-width: 100%
+	filter: grayscale(100%)
+	transition: filter .3s
 
 	@include media(450px)
 		max-width: 80%
+
+	&:hover
+		filter: grayscale(0)
